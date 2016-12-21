@@ -2,19 +2,17 @@ import os
 import sys
 import unittest
 from selenium import webdriver
-try:
-    from sauceclient import SauceClient
-except:
-    pass
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+# we should clean this up...
 def is_travis():
     return "SAUCE_USERNAME" in os.environ
 
 if is_travis():
+    from sauceclient import SauceClient
     USERNAME = os.environ['SAUCE_USERNAME']
     ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
     sauce = SauceClient(USERNAME, ACCESS_KEY)
