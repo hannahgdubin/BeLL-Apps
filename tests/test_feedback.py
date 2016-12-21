@@ -43,7 +43,8 @@ class FeedbackTest(BaseCase):
                     urgent.click()
                 
                 # send bug, question, and suggestion
-                cat = driver.find_element_by_xpath("//*[@id='site-feedback']/div[3]/input[@value='"+category+"']")
+                xpath_query = "//*[@id='site-feedback']/div[3]/input[@value='{}']".format(category)
+                cat = driver.find_element_by_xpath(xpath_query)
                 cat.click()
                 
                 # write the message
