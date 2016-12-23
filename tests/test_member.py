@@ -19,6 +19,8 @@ from string import ascii_lowercase
 
 # NOTICE: This code is totally ugly and needs refactoring, but I'm 
 #         just testing functionality before today's meeting.
+# TODO: Add member with avatar uploaded
+# TODO: Delete member
 
 @on_platforms(browsers)
 class MemberTest(BaseCase):
